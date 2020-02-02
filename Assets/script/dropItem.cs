@@ -32,8 +32,6 @@ public class dropItem : MonoBehaviour
             Debug.Log("estou colidindo com o heroi");
             Debug.Log("bpc: " + bcP);
             //Destroy(gameObject, 0.10f);
-        }
-
-
+        }        
     }
 }

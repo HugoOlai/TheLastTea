@@ -4,28 +4,27 @@ using UnityEngine;
 
 public class gatilho : MonoBehaviour
 {
-    public Rigidbody2D pedra;
+    public Rigidbody2D rd2d;
+    public bool ativaTrigger;
     // Start is called before the first frame update
     void Start()
     {
-        //pedra = GetComponent<Rigidbody2D>();
+        //bc = gameObject.AddComponent<BoxCollider2D>() as BoxCollider2D;
+
     }
 
     // Update is called once per frame
     void Update()
     {
-        if (pedra == null)
-        {
-            print("RB SUMIU!");
-        }
+        
     }
 
-    public void OnCollisionEnter2D(Collision2D collision)
+    public void OnTriggerStay2D(Collider2D collision)
     {
         if (collision.gameObject.CompareTag("heroi"))
         {
-            Debug.Log("teste de colisão");
-            pedra.simulated = true;
+            ativaTrigger = true;
+            rd2d.simulated = true;
         }
 
 
