@@ -16,10 +16,14 @@ public class character : MonoBehaviour
     public GameObject entrada;
     public bool SuperVel;
     public int p;
-
     public float jumpheight;
+    public int DoubleJumpForce = 2;
+    public int JumpingKey = 0;
+
     private bool isjumping = false;
     private Rigidbody2D rd2d;
+    private bool grounded;
+
     //public AudioSource SomAndar;
     //public AudioSource SomCorrer;
 
@@ -64,7 +68,7 @@ public class character : MonoBehaviour
             else
             {
                 vel = 3;
-               //SomCorrer.Stop();
+                //SomCorrer.Stop();
             }
         }
 
@@ -99,74 +103,97 @@ public class character : MonoBehaviour
             //    }
 
             if (Input.GetKey(KeyCode.LeftArrow))
-        {
-            //anim.SetBool("paradoCima", false);
-            //anim.SetBool("HParado", false);
-            //anim.SetBool("MoveEsquerda", true);
-            //anim.SetBool("ladoParado", false);
-            //anim.SetBool("MoveCima", false);
-            //anim.SetBool("MoveBaixo", false);
-            transform.Translate(new Vector2(-vel * Time.deltaTime, 0));
-            p = 4;
+            {
+                //anim.SetBool("paradoCima", false);
+                //anim.SetBool("HParado", false);
+                //anim.SetBool("MoveEsquerda", true);
+                //anim.SetBool("ladoParado", false);
+                //anim.SetBool("MoveCima", false);
+                //anim.SetBool("MoveBaixo", false);
+                transform.Translate(new Vector2(-vel * Time.deltaTime, 0));
+                p = 4;
 
-        }
-        else if (Input.GetKey(KeyCode.RightArrow))
-        {
-            //anim.SetBool("paradoCima", false);
-            //anim.SetBool("HParado", false);
-            //anim.SetBool("MoveEsquerda", true);
-            //anim.SetBool("ladoParado", false);
-            //anim.SetBool("MoveCima", false);
-            //anim.SetBool("MoveBaixo", false);
-            transform.Translate(new Vector2(vel * Time.deltaTime, 0));
-            p = 3;
+            }
+            else if (Input.GetKey(KeyCode.RightArrow))
+            {
+                //anim.SetBool("paradoCima", false);
+                //anim.SetBool("HParado", false);
+                //anim.SetBool("MoveEsquerda", true);
+                //anim.SetBool("ladoParado", false);
+                //anim.SetBool("MoveCima", false);
+                //anim.SetBool("MoveBaixo", false);
+                transform.Translate(new Vector2(vel * Time.deltaTime, 0));
+                p = 3;
 
-        }
-        else if (Input.GetKey(KeyCode.DownArrow))
-        {
-            //anim.SetBool("paradoCima", false);
-            //anim.SetBool("HParado", false);
-            //anim.SetBool("MoveEsquerda", false);
-            //anim.SetBool("ladoParado", false);
-            //anim.SetBool("MoveCima", false);
-            //anim.SetBool("MoveBaixo", true);
-            p = 2;
-            //transform.Translate(new Vector2(0, -vel * Time.deltaTime));
-
-        }
-
-         if (Input.GetKey(KeyCode.UpArrow) && !isjumping )
-        {
-            //anim.SetBool("paradoCima", false);
-            //anim.SetBool("HParado", false);
-            //anim.SetBool("MoveEsquerda", false);
-            //anim.SetBool("ladoParado", false);
-            //anim.SetBool("MoveCima", true);
-            //anim.SetBool("MoveBaixo", false);
-            p = 1;
-            rd2d.AddForce(Vector2.up * jumpheight);
-            isjumping = true;
-            Debug.Log("to pulando");
-            this.transform.localRotation = Quaternion.Euler(0, 0, 0);
+            }
+            else if (Input.GetKey(KeyCode.DownArrow))
+            {
+                //anim.SetBool("paradoCima", false);
+                //anim.SetBool("HParado", false);
+                //anim.SetBool("MoveEsquerda", false);
+                //anim.SetBool("ladoParado", false);
+                //anim.SetBool("MoveCima", false);
+                //anim.SetBool("MoveBaixo", true);
+                p = 2;
+                //transform.Translate(new Vector2(0, -vel * Time.deltaTime));
 
             }
 
-            //    if (Input.GetKeyDown(KeyCode.UpArrow) || Input.GetKeyDown(KeyCode.DownArrow) || Input.GetKeyDown(KeyCode.RightArrow) || Input.GetKeyDown(KeyCode.LeftArrow))
-            //    {
-            //        SomAndar.Play();
-            //    }
-            //    else if (Input.GetKeyUp(KeyCode.UpArrow) || Input.GetKeyUp(KeyCode.DownArrow) || Input.GetKeyUp(KeyCode.RightArrow) || Input.GetKeyUp(KeyCode.LeftArrow))
-            //    {
-            //        SomAndar.Stop();
-            //    }
+            if (Input.GetKey(KeyCode.UpArrow))
+            {
+                VerifyPlayerJump();
+                //anim.SetBool("paradoCima", false);
+                //anim.SetBool("HParado", false);
+                //anim.SetBool("MoveEsquerda", false);
+                //anim.SetBool("ladoParado", false);
+                //anim.SetBool("MoveCima", true);
+                //anim.SetBool("MoveBaixo", false);
+            }
 
+
+            this.transform.localRotation = Quaternion.Euler(0, 0, 0);
 
         }
 
-        if (img.fillAmount == 0)
+
+
+
+        //    if (Input.GetKeyDown(KeyCode.UpArrow) || Input.GetKeyDown(KeyCode.DownArrow) || Input.GetKeyDown(KeyCode.RightArrow) || Input.GetKeyDown(KeyCode.LeftArrow))
+        //    {
+        //        SomAndar.Play();
+        //    }
+        //    else if (Input.GetKeyUp(KeyCode.UpArrow) || Input.GetKeyUp(KeyCode.DownArrow) || Input.GetKeyUp(KeyCode.RightArrow) || Input.GetKeyUp(KeyCode.LeftArrow))
+        //    {
+        //        SomAndar.Stop();
+        //    }
+
+
+    }
+
+    private void VerifyPlayerJump()
+    {
+        if (JumpingKey == 0)
         {
-            vivo = false;
+            p = 1;
+            JumpingKey++;
+            grounded = false;
+            rd2d.AddForce(Vector2.up * jumpheight);
+            isjumping = true;
+            VerifyPlayerJump();
+            Debug.Log("to pulando");
         }
+
+        if (JumpingKey >= 1 && JumpingKey < 3)
+        {
+            rd2d.AddForce(Vector2.up * jumpheight * DoubleJumpForce);
+            grounded = false;
+            isjumping = true;
+            Debug.Log("double jumping");
+            JumpingKey--;
+        }
+        else
+            grounded = true;
+        
     }
 
     void flip()
@@ -181,7 +208,7 @@ public class character : MonoBehaviour
     {
         if (other.gameObject.CompareTag("OBJ"))
         {
-            isjumping= false;
+            isjumping = false;
             Debug.Log(isjumping);
         }
 
@@ -206,6 +233,28 @@ public class character : MonoBehaviour
             SuperVel = true;
         }
 
+        if (img.fillAmount == 0)
+        {
+            vivo = false;
+        }
+
 
     }
+
+   
 }
+
+
+
+
+        
+
+        
+
+
+
+
+
+
+
+
