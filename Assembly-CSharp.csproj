@@ -66,6 +66,8 @@
     <Compile Include="Assets\script\gatilho.cs" />
     <Compile Include="Assets\script\Item.cs" />
     <Compile Include="Assets\script\life.cs" />
+    <Compile Include="Assets\script\Menu.cs" />
+    <Compile Include="Assets\script\Quit.cs" />
     <Reference Include="Unity.TextMeshPro.Editor">
       <HintPath>C:/Users/Rick/Documents/global game jam/TheLastTea/Library/ScriptAssemblies/Unity.TextMeshPro.Editor.dll</HintPath>
     </Reference>

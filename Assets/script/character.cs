@@ -1,4 +1,5 @@
-﻿using System.Collections;
+﻿
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
@@ -183,7 +184,7 @@ public class character : MonoBehaviour
             rd2d.AddForce(Vector2.up * jumpheight);
             isjumping = true;
             VerifyPlayerJump();
-           // Debug.Log("to pulando");
+
         }
 
         if (JumpingKey >= 1 && JumpingKey < 3)
@@ -196,7 +197,7 @@ public class character : MonoBehaviour
         }
         else
             grounded = true;
-        
+
     }
 
     void flip()
@@ -231,8 +232,14 @@ public class character : MonoBehaviour
         {
             GameObject clone;
             clone = Instantiate(nuvem, transform.position, transform.rotation);
-            Destroy(itemPerna, 1f);
+            Destroy(itemPerna);
         }
+
+        //if (other.gameObject.CompareTag("ativaSuperVEl"))
+        //{
+        //    SuperVel = true;
+        //}
+
 
         if (img.fillAmount == 0)
         {
@@ -242,15 +249,15 @@ public class character : MonoBehaviour
 
     }
 
-   
+
 }
 
 
 
 
-        
 
-        
+
+
 
 
 

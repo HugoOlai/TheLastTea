@@ -8,6 +8,7 @@ public class Item : dropItem
     public float jumpheight;
     private bool isjumping;
     public bool drop;
+    public Rigidbody2D nuvem;
     // Start is called before the first frame update
     void Start()
     {
@@ -29,7 +30,7 @@ public class Item : dropItem
             if (isjumping)
             {
                 rd2d.AddForce(Vector2.up * jumpheight);
-                rd2d.AddForce(Vector2.right * -jumpheight);
+                rd2d.AddForce(Vector2.right * jumpheight);
                 isjumping = false;
         }
         else
