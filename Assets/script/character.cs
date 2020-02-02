@@ -16,10 +16,13 @@ public class character : MonoBehaviour
     public GameObject entrada;
     public bool SuperVel;
     public int p;
-
     public float jumpheight;
+    public int DoubleJumpForce = 2;
+    public int JumpingKey;
+
     private bool isjumping = false;
     private Rigidbody2D rd2d;
+    
     //public AudioSource SomAndar;
     //public AudioSource SomCorrer;
 
@@ -143,11 +146,18 @@ public class character : MonoBehaviour
             //anim.SetBool("ladoParado", false);
             //anim.SetBool("MoveCima", true);
             //anim.SetBool("MoveBaixo", false);
-            p = 1;
-            rd2d.AddForce(Vector2.up * jumpheight);
-            isjumping = true;
+
+
+                p = 1;
+                JumpingKey++;
+                rd2d.AddForce(Vector2.up * jumpheight);
+                isjumping = true;
+                VerifyPlayerJump();
                 Debug.Log("to pulando");
+
         }
+
+            
 
             //    if (Input.GetKeyDown(KeyCode.UpArrow) || Input.GetKeyDown(KeyCode.DownArrow) || Input.GetKeyDown(KeyCode.RightArrow) || Input.GetKeyDown(KeyCode.LeftArrow))
             //    {
@@ -161,9 +171,24 @@ public class character : MonoBehaviour
 
         }
 
+        
+
         if (img.fillAmount == 0)
         {
             vivo = false;
+        }
+
+    }
+
+    private void VerifyPlayerJump()
+    {
+        if (JumpingKey > 1 && JumpingKey < 3)
+        {
+            p = 1;
+            rd2d.AddForce(Vector2.up * jumpheight * DoubleJumpForce);
+            isjumping = true;
+            Debug.Log("double jumping");
+            JumpingKey--;
         }
     }
 
@@ -205,4 +230,6 @@ public class character : MonoBehaviour
 
 
     }
+
+
 }
