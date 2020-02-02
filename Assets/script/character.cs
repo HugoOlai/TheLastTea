@@ -1,4 +1,5 @@
-﻿using System.Collections;
+﻿
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
@@ -47,12 +48,12 @@ public class character : MonoBehaviour
 
         if (vivo == true)
         {
-            if (Input.GetKey(KeyCode.RightArrow) && face)
+            if (Input.GetKey(KeyCode.RightArrow) && !face)
             {
                 flip();
             }
 
-            if (Input.GetKey(KeyCode.LeftArrow) && !face)
+            if (Input.GetKey(KeyCode.LeftArrow) && face)
             {
                 flip();
             }
@@ -180,7 +181,7 @@ public class character : MonoBehaviour
             rd2d.AddForce(Vector2.up * jumpheight);
             isjumping = true;
             VerifyPlayerJump();
-            Debug.Log("to pulando");
+            // Debug.Log("to pulando");
         }
 
         if (JumpingKey >= 1 && JumpingKey < 3)
@@ -188,12 +189,12 @@ public class character : MonoBehaviour
             rd2d.AddForce(Vector2.up * jumpheight * DoubleJumpForce);
             grounded = false;
             isjumping = true;
-            Debug.Log("double jumping");
+            //Debug.Log("double jumping");
             JumpingKey--;
         }
         else
             grounded = true;
-        
+
     }
 
     void flip()
@@ -209,10 +210,8 @@ public class character : MonoBehaviour
         if (other.gameObject.CompareTag("OBJ"))
         {
             isjumping = false;
-            Debug.Log(isjumping);
+            //Debug.Log(isjumping);
         }
-
-
 
     }
 
@@ -222,16 +221,14 @@ public class character : MonoBehaviour
         //{
         //    vel = 3f;
         //}
-
-
     }
 
     public void OnTriggerEnter2D(Collider2D other)
     {
-        if (other.gameObject.CompareTag("ativaSuperVEl"))
-        {
-            SuperVel = true;
-        }
+        //if (other.gameObject.CompareTag("ativaSuperVEl"))
+        //{
+        //    SuperVel = true;
+        //}
 
         if (img.fillAmount == 0)
         {
@@ -241,15 +238,15 @@ public class character : MonoBehaviour
 
     }
 
-   
+
 }
 
 
 
 
-        
 
-        
+
+
 
 
 
