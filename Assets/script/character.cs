@@ -47,12 +47,12 @@ public class character : MonoBehaviour
 
         if (vivo == true)
         {
-            if (Input.GetKey(KeyCode.RightArrow) && face)
+            if (Input.GetKey(KeyCode.RightArrow) && !face)
             {
                 flip();
             }
 
-            if (Input.GetKey(KeyCode.LeftArrow) && !face)
+            if (Input.GetKey(KeyCode.LeftArrow) && face)
             {
                 flip();
             }
@@ -212,8 +212,6 @@ public class character : MonoBehaviour
             Debug.Log(isjumping);
         }
 
-
-
     }
 
     public void OnCollisionExit2D(Collision2D other)
@@ -222,8 +220,6 @@ public class character : MonoBehaviour
         //{
         //    vel = 3f;
         //}
-
-
     }
 
     public void OnTriggerEnter2D(Collider2D other)

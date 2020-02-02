@@ -63,6 +63,7 @@
     <Compile Include="Assets\script\Cam.cs" />
     <Compile Include="Assets\script\character.cs" />
     <Compile Include="Assets\script\dropItem.cs" />
+    <Compile Include="Assets\script\gatilho.cs" />
     <Compile Include="Assets\script\Item.cs" />
     <Compile Include="Assets\script\life.cs" />
     <Reference Include="Unity.TextMeshPro.Editor">
