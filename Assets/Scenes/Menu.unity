@@ -174,7 +174,7 @@ SpriteRenderer:
   m_Size: {x: 19.2, y: 10.8}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
-  m_WasSpriteAssigned: 1
+  m_WasSpriteAssigned: 0
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
 --- !u!4 &227159525
@@ -339,7 +339,7 @@ MonoBehaviour:
     m_ColorMultiplier: 1
     m_FadeDuration: 0.1
   m_SpriteState:
-    m_HighlightedSprite: {fileID: 21300000, guid: 8261a37f084eda24f9386f183cc0cddd,
+    m_HighlightedSprite: {fileID: 21300000, guid: df9b454183cd9a34f91a011a0c2ca71b,
       type: 3}
     m_PressedSprite: {fileID: 0}
     m_DisabledSprite: {fileID: 0}
@@ -382,7 +382,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: 8e4bf97b36494634aaf8f396ee18d4e6, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 226e5ef43905c5f4c9fdcecb6b292299, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -403,8 +403,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 192c85214e3da4a478fb7b5ea287a160, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  OnMouseImage: {fileID: 21300000, guid: 8e4bf97b36494634aaf8f396ee18d4e6, type: 3}
-  OnMouseImageChange: {fileID: 21300000, guid: 8261a37f084eda24f9386f183cc0cddd, type: 3}
 --- !u!222 &877210868
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -468,7 +466,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: a290d2f442086a943b1efe7eb2d7f3b9, type: 3}
+  m_Sprite: {fileID: 21300000, guid: bbd4c0c949fbc9e468dadc24ddf3a9e4, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -602,7 +600,7 @@ MonoBehaviour:
     m_ColorMultiplier: 1
     m_FadeDuration: 0.1
   m_SpriteState:
-    m_HighlightedSprite: {fileID: 21300000, guid: a345be271b53d164b9e56c307c9d2d01,
+    m_HighlightedSprite: {fileID: 21300000, guid: 0ee29e55f20c0f84bac4b795d98457e1,
       type: 3}
     m_PressedSprite: {fileID: 0}
     m_DisabledSprite: {fileID: 0}
@@ -645,7 +643,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: 73de87bd516cdb54ba5e1cbafdb79dfe, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 0f1c58a7157a6d240bbb44d214034cb7, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -666,8 +664,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 192c85214e3da4a478fb7b5ea287a160, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  OnMouseImage: {fileID: 21300000, guid: 73de87bd516cdb54ba5e1cbafdb79dfe, type: 3}
-  OnMouseImageChange: {fileID: 21300000, guid: a345be271b53d164b9e56c307c9d2d01, type: 3}
 --- !u!222 &1720150973
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -908,7 +904,7 @@ MonoBehaviour:
     m_ColorMultiplier: 1
     m_FadeDuration: 0.1
   m_SpriteState:
-    m_HighlightedSprite: {fileID: 21300000, guid: e36890bd3bb366b4283063c433a3b6d0,
+    m_HighlightedSprite: {fileID: 21300000, guid: 12167d26e39e6a74e9793f06dde970d2,
       type: 3}
     m_PressedSprite: {fileID: 0}
     m_DisabledSprite: {fileID: 0}
@@ -951,7 +947,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: bc714ba3e10d7f04e8699734993c483b, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 0f1c58a7157a6d240bbb44d214034cb7, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -972,8 +968,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 192c85214e3da4a478fb7b5ea287a160, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  OnMouseImage: {fileID: 21300000, guid: bc714ba3e10d7f04e8699734993c483b, type: 3}
-  OnMouseImageChange: {fileID: 21300000, guid: e36890bd3bb366b4283063c433a3b6d0, type: 3}
 --- !u!222 &1956814064
 CanvasRenderer:
   m_ObjectHideFlags: 0
