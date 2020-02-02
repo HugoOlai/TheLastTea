@@ -138,7 +138,7 @@ public class character : MonoBehaviour
 
         }
 
-         if (Input.GetKey(KeyCode.UpArrow) && !isjumping)
+         if (Input.GetKey(KeyCode.UpArrow) && !isjumping )
         {
             //anim.SetBool("paradoCima", false);
             //anim.SetBool("HParado", false);
@@ -146,6 +146,7 @@ public class character : MonoBehaviour
             //anim.SetBool("ladoParado", false);
             //anim.SetBool("MoveCima", true);
             //anim.SetBool("MoveBaixo", false);
+<<<<<<< HEAD
 
 
                 p = 1;
@@ -156,6 +157,15 @@ public class character : MonoBehaviour
                 Debug.Log("to pulando");
 
         }
+=======
+            p = 1;
+            rd2d.AddForce(Vector2.up * jumpheight);
+            isjumping = true;
+            Debug.Log("to pulando");
+            this.transform.localRotation = Quaternion.Euler(0, 0, 0);
+
+            }
+>>>>>>> ae2a31ee1d2f220a2f861a22c5825986d34c229f
 
             
 
@@ -205,6 +215,7 @@ public class character : MonoBehaviour
         if (other.gameObject.CompareTag("OBJ"))
         {
             isjumping= false;
+            Debug.Log(isjumping);
         }
 
 

@@ -160,7 +160,7 @@ GameObject:
   - component: {fileID: 2284714464199842068}
   m_Layer: 0
   m_Name: personagem
-  m_TagString: Untagged
+  m_TagString: heroi
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -318,6 +318,7 @@ MonoBehaviour:
   entrada: {fileID: 0}
   SuperVel: 0
   p: 0
+  jumpheight: 0
 --- !u!1 &2284714464460784622
 GameObject:
   m_ObjectHideFlags: 0
