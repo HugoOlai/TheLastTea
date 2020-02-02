@@ -1,4 +1,13 @@
-﻿
+﻿git remote add origin https://github.com/HugoOlai/TheLastTea.git
+git push -u origin master
+
+https://github.com/HugoOlai/TheLastTea/invitations
+
+
+albert:
+https://github.com/HugoOlai/TheLastTea/invitations
+
+ESTER:
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
