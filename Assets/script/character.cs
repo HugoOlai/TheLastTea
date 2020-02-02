@@ -20,6 +20,9 @@ public class character : MonoBehaviour
     public int DoubleJumpForce = 2;
     public int JumpingKey = 0;
 
+    public GameObject nuvem;
+    public GameObject itemPerna;
+
     private bool isjumping = false;
     private Rigidbody2D rd2d;
     private bool grounded;
@@ -224,10 +227,12 @@ public class character : MonoBehaviour
 
     public void OnTriggerEnter2D(Collider2D other)
     {
-        //if (other.gameObject.CompareTag("ativaSuperVEl"))
-        //{
-        //    SuperVel = true;
-        //}
+        if (other.gameObject.CompareTag("item"))
+        {
+            GameObject clone;
+            clone = Instantiate(nuvem, transform.position, transform.rotation);
+            Destroy(itemPerna, 1f);
+        }
 
         if (img.fillAmount == 0)
         {

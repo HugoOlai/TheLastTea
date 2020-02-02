@@ -8,6 +8,7 @@ TagManager:
   - OBJ
   - item
   - heroi
+  - trigger
   layers:
   - Default
   - TransparentFX
