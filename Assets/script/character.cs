@@ -180,6 +180,7 @@ public class character : MonoBehaviour
         if (other.gameObject.CompareTag("OBJ"))
         {
             isjumping= false;
+            Debug.Log(isjumping)
         }
 
 
