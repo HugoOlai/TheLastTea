@@ -16,6 +16,7 @@ public class Cam : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        if(player.transform.position.x >= -38)
         transform.position = player.transform.position + offset;
     }
 }
